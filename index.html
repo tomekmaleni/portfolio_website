@@ -11,11 +11,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="assets/vendors/js/glightbox.min.js">
 </head>
 
 <body>
     <!-- START NAVBAR SECTION -->
-    <nav class="navbar navbar-dark navbar-expand-lg menu">
+    <nav class="navbar navbar-dark navbar-expand-lg menu shadow fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="images/logo.png" alt="Logo image">
@@ -52,7 +59,67 @@
         </div>
     </nav>
 
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <!-- START INTRO SECTION -->
+    <section id="home" class="intro-section">
+        <div class="container">
+            <div class="row align-items-center text-white">
+                <!-- START CONTENT FOR THE INTRO -->
+                <div class="col-md-6 intros">
+                    <h1 class="display-2">
+                        <span class="display-2--intro">Hey I'm Patrick</span>
+                        <span class="display-2--description lh-base">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                            Quis ducimus suscipit accusamus delectus, vitae illum magnam nam! Impedit voluptates
+                            aperiam, architecto repellat non at, distinctio corporis sed debitis, laborum
+                            ratione.</span>
+                    </h1>
+                    <button type="button" class="rounded-pill btn-rounded">Get in Touch
+                        <span><i class="fas fa-arrow-right"></i></span>
+                    </button>
+                </div>
+                <!-- START CONTENT FOR THE VIDEO -->
+                <div class="col-md-6 intros text-end">
+                    <div class="video-box">
+                        <img src="images/arts/intro-section-illustration.png" alt="Video Illustration"
+                            class="img-fluid">
+                        <a href="" class="glightbox">
+                            <span>
+                                <i class="fas fa-play-circle"></i>
+                            </span>
+                            <span class="border-animation border-animation--border-1"></span>
+                            <span class="border-animation border-animation--border-2"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#fff" fill-opacity="1"
+                d="M0,96L34.3,122.7C68.6,149,137,203,206,197.3C274.3,192,343,128,411,133.3C480,139,549,213,617,208C685.7,203,754,117,823,74.7C891.4,32,960,32,1029,74.7C1097.1,117,1166,203,1234,208C1302.9,213,1371,139,1406,101.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
+    </section>
+
+    <!-- START COMPANIES SECTION -->
+    <section id="companies" class="companies">
+        <div class="container">
+            <div class="row">
+                <h4 class="fw-bold lead mb-3">Trusted by companies like</h4>
+            </div>
+        </div>
+    </section>
+
+    <script src="/assets/vendors/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+        const lightbox = GLightbox({
+            'href': 'https://www.youtube.com/watch?v=iJKCj8uAHz8',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': 'true',
+        });
+    </script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
