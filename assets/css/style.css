@@ -10976,7 +10976,6 @@ textarea.form-control-lg {
 
 .companies {
   padding: 0 0 0.5rem 0;
-  margin-bottom: 10rem;
 }
 .companies__logo-box {
   max-width: 100%;
@@ -10996,6 +10995,7 @@ textarea.form-control-lg {
 .services {
   position: relative;
   padding: 1rem 0;
+  padding-top: 10rem;
 }
 .services__content {
   padding: 1rem;
@@ -11078,6 +11078,9 @@ textarea.form-control-lg {
 }
 .portfolio buttons {
   text-transform: capitalize;
+}
+.portfolio .hide {
+  display: none;
 }
 
 .portfolio-box {
