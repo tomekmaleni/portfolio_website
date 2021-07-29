@@ -16,8 +16,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <!-- GLightbox -->
-    <link rel="stylesheet" href="assets/vendors/js/glightbox.min.js">
 </head>
 
 <body>
@@ -82,13 +80,21 @@
                     <div class="video-box">
                         <img src="images/arts/intro-section-illustration.png" alt="Video illustration"
                             class="img-fluid">
-                        <a href="#" class="glightbox position-absolute top-50 start-50 translate-middle">
+                        <a href="#" id="video-button" class="position-absolute top-50 start-50 translate-middle">
                             <span>
                                 <i class="fas fa-play-circle"></i>
                             </span>
                             <span class="border-animation border-animation--border-1"></span>
                             <span class="border-animation border-animation--border-2"></span>
                         </a>
+
+                        <div class="video-container">
+                            <iframe width="560" height="500" src="https://www.youtube.com/embed/iJKCj8uAHz8"
+                                title="YouTube video player" frameborder="0" class="video"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <span class="close">&#x2715;</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -817,18 +823,35 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
-    <script src="/assets/vendors/js/glightbox.min.js"></script>
 
     <script type="text/javascript">
-        const lightbox = GLightbox({
-            'href': 'https://www.youtube.com/watch?v=iJKCj8uAHz8',
-            'type': 'video',
-            'source': 'youtube', //vimeo, youtube or local
-            'width': 900,
-            'autoPlayVideos': 'true',
-        });
+        const btn = document.querySelector("#video-button");
+        const videoContainer = document.querySelector(".video-container");
+        const closer = document.querySelector(".close");
+        const video = document.querySelector("video");
 
+        var stopVideo = function () {
+            var iframe = document.querySelector('iframe');
+            var video = document.querySelector('video');
+            if (iframe) {
+                var iframeSrc = iframe.src;
+                iframe.src = iframeSrc;
+            }
+            if (video) {
+                video.pause();
+            }
+        };
+
+        function toggle() {
+            videoContainer.classList.toggle("active");
+            stopVideo();
+        }
+
+        btn.addEventListener("click", toggle);
+        closer.addEventListener("click", toggle);
     </script>
+
+
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
